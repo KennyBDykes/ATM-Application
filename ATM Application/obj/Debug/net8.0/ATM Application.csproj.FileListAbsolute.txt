@@ -1,0 +1,72 @@
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/appsettings.Development.json
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/appsettings.json
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/ATM Application.staticwebassets.endpoints.json
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/ATM Application
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/ATM Application.deps.json
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/ATM Application.runtimeconfig.json
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/ATM Application.dll
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/ATM Application.pdb
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/kennyd/ATM Application/ATM Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.csproj.AssemblyReference.cache
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.AssemblyInfoInputs.cache
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.AssemblyInfo.cs
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.csproj.CoreCompileInputs.cache
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.MvcApplicationPartsAssemblyInfo.cs
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.MvcApplicationPartsAssemblyInfo.cache
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/scopedcss/bundle/ATM Application.styles.css
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/staticwebassets.build.json
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/staticwebassets.development.json
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.ATM Application.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.ATM Application.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.build.ATM Application.props
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ATM Application.props
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.ATM Application.props
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Appl.37F813CF.Up2Date
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.dll
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/refint/ATM Application.dll
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.pdb
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ATM Application.genruntimeconfig.cache
+/Users/kennyd/ATM Application/ATM Application/obj/Debug/net8.0/ref/ATM Application.dll
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/appsettings.Development.json
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/appsettings.json
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/ATM Application.staticwebassets.endpoints.json
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/ATM Application
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/ATM Application.deps.json
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/ATM Application.runtimeconfig.json
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/ATM Application.dll
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/ATM Application.pdb
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/kennyd/ATM-Application/ATM Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.csproj.AssemblyReference.cache
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.AssemblyInfoInputs.cache
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.AssemblyInfo.cs
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.csproj.CoreCompileInputs.cache
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.MvcApplicationPartsAssemblyInfo.cs
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.MvcApplicationPartsAssemblyInfo.cache
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/scopedcss/bundle/ATM Application.styles.css
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/staticwebassets.build.json
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/staticwebassets.development.json
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.ATM Application.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.ATM Application.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.build.ATM Application.props
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ATM Application.props
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.ATM Application.props
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Appl.37F813CF.Up2Date
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.dll
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/refint/ATM Application.dll
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.pdb
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.genruntimeconfig.cache
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ref/ATM Application.dll

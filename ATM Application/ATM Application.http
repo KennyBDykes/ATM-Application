@@ -1,0 +1,6 @@
+@CodingExercise1_HostAddress = http://localhost:5191
+
+GET {{CodingExercise1_HostAddress}}/
+Accept: application/json
+
+###
