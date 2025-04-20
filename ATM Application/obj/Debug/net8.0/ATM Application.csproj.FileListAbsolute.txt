@@ -70,3 +70,4 @@
 /Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.pdb
 /Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.genruntimeconfig.cache
 /Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ref/ATM Application.dll
+/Users/kennyd/ATM-Application/ATM Application/obj/Debug/net8.0/ATM Application.sourcelink.json
