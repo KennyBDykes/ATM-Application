@@ -9,7 +9,7 @@ A simple web-based ATM simulation built with ASP.NET Core. This application supp
 - Withdraw funds from an account
 - Transfer funds between Checking and Savings
 - Track account balances
-- View transaction history (in-memory)
+- View transaction history 
 - Simple REST API — no authentication
 
 ---
@@ -18,7 +18,8 @@ A simple web-based ATM simulation built with ASP.NET Core. This application supp
 
 - **.NET 6/7** (ASP.NET Core Web API)
 - **C#**
-- **In-memory storage** (no database)
+- **SQL Lite** (Lightweight database)
+- **Entity Framework** (Object Relational Mapping)
 - **Swagger UI** for easy API testing
 
 ---
