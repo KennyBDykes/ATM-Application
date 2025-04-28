@@ -1,9 +1,9 @@
 public interface IBankingService
 {
-    void Deposit(RequestDto dto);
-    void Withdrawal(RequestDto dto);
-    void Transfer(TransferDto dto);
-    decimal GetAccountBalance(string accountType);
-    IEnumerable<Transaction> GetTransactionHistory(string accountType);
+    Task Deposit(RequestDto dto);
+    Task Withdrawal(RequestDto dto);
+    Task Transfer(TransferDto dto);
+    Task <decimal> GetAccountBalance(AccountType accountType);
+    Task<IEnumerable<Transaction>> GetTransactionHistory(AccountType accountType);
 
 }

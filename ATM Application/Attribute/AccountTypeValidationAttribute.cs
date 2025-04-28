@@ -1,18 +1,22 @@
 using System.ComponentModel.DataAnnotations;
 
 public class AccountTypeValidationAttribute : ValidationAttribute
-{
-    private static readonly string[] AllowedTypes = { "Checking", "Savings" };
-
-    protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+{ 
+    public override bool IsValid(object value)
     {
-        if (value is string accountType)
+        // Ensure the value is an enum of type AccountType
+        if (value is AccountType accountType)
         {
-            if (AllowedTypes.Contains(accountType, StringComparer.OrdinalIgnoreCase))
-            {
-                return ValidationResult.Success;
-            }
+            // If the value is a valid AccountType, return true
+            return Enum.IsDefined(typeof(AccountType), accountType);
         }
-        return new ValidationResult("AccountType must be either 'Checking' or 'Savings'.");
+
+        // If not an AccountType enum, validation fails
+        return false;
+    }
+
+    public override string FormatErrorMessage(string name)
+    {
+        return $"{name} must be a valid account type (Checking or Savings).";
     }
 }

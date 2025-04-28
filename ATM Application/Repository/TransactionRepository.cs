@@ -1,16 +1,21 @@
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 public class TransactionRepository: ITransactionRepository
 {
-private IList <Transaction> _transactions;  
-public TransactionRepository ()
+
+private BankingDbContext _context;
+public TransactionRepository (BankingDbContext context)
 {
-    _transactions = new List <Transaction>();
+    _context = context;
 }
-public void AddTransaction (Transaction transaction)
+public async Task AddTransaction (Transaction transaction)
 {
-    _transactions.Add(transaction);
+   await  _context.Transactions.AddAsync(transaction);
+   await _context.SaveChangesAsync();
 }
-public IEnumerable<Transaction> GetTransactionHistory(string accountType)
+public async Task<IEnumerable<Transaction>> GetTransactionHistory(string accountType)
 {
- return _transactions.Where(x => x.AccountType == accountType);
+ return await  _context.Transactions.Where(t => t.AccountType == accountType).ToListAsync();
 }
 }

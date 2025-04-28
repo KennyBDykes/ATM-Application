@@ -9,16 +9,16 @@ public class BankingController : ControllerBase
     {
       _bankingService = bankingService;
     }
-    [HttpGet("balance/{type}")]
-    public ActionResult GetAccountBalance([FromRoute] string type)
+    [HttpGet("balance/{accountType}")]
+    public async Task <ActionResult> GetAccountBalance([FromRoute] AccountType accountType)
     {
       try
       {
-      if (type != "Checking" && type != "Savings")
+      if (accountType != AccountType.Checking && accountType != AccountType.Savings)
        {
        return BadRequest("Invalid account type. Must be 'Checking' or 'Savings'.");
        }
-      var getBalance = _bankingService.GetAccountBalance(type);
+      var getBalance = await _bankingService.GetAccountBalance(accountType);
 
       return Ok(getBalance);
       }
@@ -28,15 +28,15 @@ public class BankingController : ControllerBase
       }
     }
     [HttpGet("transactions/{accountType}")]
-    public ActionResult GetTransactionHistory([FromRoute]string accountType)
+    public async Task <ActionResult> GetTransactionHistory([FromRoute]AccountType accountType)
     {
     try
     {
-    if (accountType != "Checking" && accountType != "Savings")
+    if (accountType != AccountType.Checking && accountType != AccountType.Savings)
     {
         return BadRequest("Invalid account type. Must be 'Checking' or 'Savings'.");
     }
-     var  transactionHistory = _bankingService.GetTransactionHistory(accountType);
+     var  transactionHistory = await _bankingService.GetTransactionHistory(accountType);
      return Ok(transactionHistory);
     }  
     catch(ArgumentException e)
@@ -45,11 +45,11 @@ public class BankingController : ControllerBase
       }
     }
     [HttpPut("deposit")]
-    public ActionResult Deposit([FromBody] RequestDto dto)
+    public async Task <ActionResult> Deposit([FromBody] RequestDto dto)
     {
         try
         {
-         _bankingService.Deposit(dto);
+         await _bankingService.Deposit(dto);
          return NoContent();
         }    
       catch(ArgumentException e)
@@ -58,10 +58,10 @@ public class BankingController : ControllerBase
       }
     }
     [HttpPut("withdrawal")]
-    public ActionResult Withdrawal([FromBody] RequestDto dto)
+    public async Task<ActionResult> Withdrawal([FromBody] RequestDto dto)
     {
     try{
-        _bankingService.Withdrawal(dto);
+        await _bankingService.Withdrawal(dto);
         return NoContent();
         }
      catch(InvalidDataException e)
@@ -74,11 +74,11 @@ public class BankingController : ControllerBase
       }
     }
     [HttpPut("transfer")]
-    public ActionResult Transfer([FromBody] TransferDto dto)
+    public async Task<ActionResult> Transfer([FromBody] TransferDto dto)
     {
         try
         {
-         _bankingService.Transfer(dto);
+         await _bankingService.Transfer(dto);
          return NoContent();
         }  
         catch(InvalidDataException e)

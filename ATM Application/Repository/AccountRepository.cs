@@ -1,50 +1,62 @@
+using Microsoft.EntityFrameworkCore;
+
 public class AccountRepository : IAccountRepository
 {
-private IDictionary<string, Account> _accounts;  
-public AccountRepository()
+private BankingDbContext _context;
+public AccountRepository(BankingDbContext context)
 {
- _accounts = new Dictionary<string, Account>
- {
-     { "Checking", new Account{ AccountType = "Checking" , Balance = 0.0m} },
-     { "Savings", new Account { AccountType = "Savings", Balance = 0.0m} }
- };
+  _context = context;
 }
-public void Deposit(string accountType, decimal amount)
+public async Task Deposit(string accountType, decimal amount)
 {
-  if(!_accounts.TryGetValue(accountType, out Account? account))
+  var account = await _context.Accounts.Where(x => x.AccountType == accountType).FirstOrDefaultAsync();
+  if(account == null)
   {
     throw new ArgumentException("Account not found");
   }
-  account.Balance += amount;
+   account.Balance += amount;
+
+   await _context.SaveChangesAsync(); 
 }
-public void Withdrawal(string accountType, decimal amount)
+public async Task Withdrawal(string accountType, decimal amount)
 {
- if(!_accounts.TryGetValue(accountType, out Account? account))
+  var account = await _context.Accounts.Where(x => x.AccountType == accountType).FirstOrDefaultAsync();
+  if(account == null)
   {
     throw new ArgumentException("Account not found");
   }
   account.Balance -= amount;
+
+  await _context.SaveChangesAsync(); 
 }
-public void Transfer(string accountfrom , string accountTo, decimal amount)
+public async Task Transfer(string accountfrom , string accountTo, decimal amount)
 {
-   if(!_accounts.TryGetValue(accountfrom, out Account? acctFrom))
+  using var transaction = await _context.Database.BeginTransactionAsync(); 
+
+  try
   {
-    throw new ArgumentException("Account not found");
-  }
-  if(!_accounts.TryGetValue(accountTo, out Account? acctTo))
+  var acctFrom = await _context.Accounts.Where(x => x.AccountType == accountfrom).FirstOrDefaultAsync();
+  var acctTo = await _context.Accounts.Where(x => x.AccountType == accountTo).FirstOrDefaultAsync();
+  if(acctFrom == null || acctTo == null)
   {
     throw new ArgumentException("Account not found");
   }
   acctFrom.Balance -= amount;
   acctTo.Balance += amount;
-}
-public decimal GetAccountBalance(string accountType)
-{
-if(!_accounts.TryGetValue(accountType, out Account? account))
+  await _context.SaveChangesAsync();
+  await transaction.CommitAsync();
+  } 
+  catch(Exception e)
   {
-    throw new ArgumentException("Account not found");
+    await transaction.RollbackAsync();   
+    throw;
   }
-  return account.Balance;
+}
+public async Task<decimal> GetAccountBalance(string accountType)
+{
+        return await _context.Accounts.Where(x => x.AccountType == accountType)
+         .Select(x => x.Balance)
+         .FirstOrDefaultAsync();
 }
 
 }

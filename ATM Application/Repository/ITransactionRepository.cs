@@ -1,5 +1,5 @@
 public interface ITransactionRepository
 {
-    void AddTransaction(Transaction transaction);
-    IEnumerable<Transaction> GetTransactionHistory(string accountType);
+    Task AddTransaction(Transaction transaction);
+    Task <IEnumerable<Transaction>> GetTransactionHistory(string accountType);
 }

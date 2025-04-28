@@ -8,78 +8,95 @@ public class BankingService :IBankingService
         _accountRepository = accountRepository;
         _transactionRepository = transactionRepository;
     }
-   public decimal GetAccountBalance(string accountType)
+   public async Task<decimal> GetAccountBalance(AccountType accountType)
     {
-        var accountBalance = _accountRepository.GetAccountBalance(accountType);
+        var accountBalance = await _accountRepository.GetAccountBalance(MapAccountTypeToString(accountType));
         return accountBalance;
     }
-   public IEnumerable<Transaction> GetTransactionHistory(string accountType)
+   public async Task <IEnumerable<Transaction>> GetTransactionHistory(AccountType accountType)
     {
-        var transactionHistory = _transactionRepository.GetTransactionHistory(accountType);
+        var transactionHistory = await _transactionRepository.GetTransactionHistory(MapAccountTypeToString(accountType));
         return transactionHistory;
     }
-   public void Deposit(RequestDto dto)
+   public async Task Deposit(RequestDto dto)
     {
-        _accountRepository.Deposit(dto.AccountType, dto.Amount);
+        var accountType  = MapAccountTypeToString(dto.AccountType);
+        await _accountRepository.Deposit(accountType, dto.Amount);
          var transaction = new Transaction {
           Date = DateTime.Now,
           Amount = dto.Amount,
           Type = "Deposit",
-          AccountType = dto.AccountType
+          AccountType = accountType
          };
-        _transactionRepository.AddTransaction(transaction);
+       await  _transactionRepository.AddTransaction(transaction);
 
     }
-   public void Withdrawal(RequestDto dto)
+   public async Task Withdrawal(RequestDto dto)
     {
-        var balance = _accountRepository.GetAccountBalance(dto.AccountType);
+
+        var accountType  = MapAccountTypeToString(dto.AccountType);
+        var balance = await _accountRepository.GetAccountBalance(accountType);
 
         if(balance < dto.Amount)
         {
             throw new InvalidDataException("Not enough money in account to withdraw");
         }
-        _accountRepository.Withdrawal(dto.AccountType, dto.Amount);
+        await _accountRepository.Withdrawal(accountType, dto.Amount);
          var transaction = new Transaction {
           Date = DateTime.Now,
           Amount = dto.Amount,
           Type = "Withdrawal",
-          AccountType = dto.AccountType
+          AccountType = accountType
          };
-        _transactionRepository.AddTransaction(transaction);
+       await  _transactionRepository.AddTransaction(transaction);
     }
-   public void Transfer(TransferDto dto)
+   public async Task Transfer(TransferDto dto)
     {
         if(dto.AccountFrom == dto.AccountTo)
         {
             throw new InvalidDataException("Attempting to transfer from and to the same account");
         }
-        var balance = _accountRepository.GetAccountBalance(dto.AccountFrom);
+        var acctFrom = MapAccountTypeToString(dto.AccountFrom);
+        var acctTo = MapAccountTypeToString(dto.AccountTo);
+        var balance = await _accountRepository.GetAccountBalance(acctFrom);
         if(balance < dto.Amount)
         {
             throw new InvalidDataException("Not enough money in account to transfer successfully");
         }
-        _accountRepository.Transfer(dto.AccountFrom, dto.AccountTo, dto.Amount);
+        await _accountRepository.Transfer(acctFrom, acctTo, dto.Amount);
          var transactionfrom = new Transaction {
           Date = DateTime.Now,
           Amount = dto.Amount,
-          AccountTo = dto.AccountTo,
-          AccountFrom = dto.AccountFrom,
+          AccountTo = acctTo,
+          AccountFrom = acctFrom,
           Type = "Transfer",
-          AccountType = dto.AccountFrom
+          AccountType = acctFrom
          }; 
-        _transactionRepository.AddTransaction(transactionfrom);
+       await  _transactionRepository.AddTransaction(transactionfrom);
 
 
          var transactionto = new Transaction {
           Date = DateTime.Now,
           Amount = dto.Amount,
-          AccountTo = dto.AccountTo,
-          AccountFrom = dto.AccountFrom,
+          AccountTo = acctTo,
+          AccountFrom = acctFrom,
           Type = "Transfer",
-          AccountType = dto.AccountTo
+          AccountType = acctTo
          }; 
-        _transactionRepository.AddTransaction(transactionto);
+        await _transactionRepository.AddTransaction(transactionto);
 
+    }
+    private string MapAccountTypeToString(AccountType accountType)
+    {
+    switch (accountType)
+    {
+        case AccountType.Checking:
+            return "Checking";
+        case AccountType.Savings:
+            return "Savings";
+        default:
+            return "Unknown Account Type";
+    }
     }
 
 }

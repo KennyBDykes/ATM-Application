@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.SignalR;
 
 public interface IAccountRepository
 {
-    void Deposit(string accountType, decimal amount);
-    void Withdrawal(string accountType, decimal amount);
-    void Transfer(string accountfrom , string accountTo, decimal amount);
-    decimal GetAccountBalance(string accountType);
+    Task Deposit(string accountType, decimal amount);
+    Task Withdrawal(string accountType, decimal amount);
+    Task Transfer(string accountfrom , string accountTo, decimal amount);
+    Task <decimal> GetAccountBalance(string accountType);
 }
