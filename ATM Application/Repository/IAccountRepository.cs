@@ -1,6 +1,6 @@
-using System.Runtime.CompilerServices;
-using Microsoft.AspNetCore.SignalR;
 
+namespace ATM_Application.Repositories
+{
 public interface IAccountRepository
 {
     Task Deposit(string accountType, decimal amount);
@@ -8,3 +8,5 @@ public interface IAccountRepository
     Task Transfer(string accountfrom , string accountTo, decimal amount);
     Task <decimal> GetAccountBalance(string accountType);
 }
+}
+        

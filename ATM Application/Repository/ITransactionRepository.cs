@@ -1,5 +1,10 @@
-public interface ITransactionRepository
+using ATM_Application.Models;
+
+namespace ATM_Application.Repositories
 {
-    Task AddTransaction(Transaction transaction);
-    Task <IEnumerable<Transaction>> GetTransactionHistory(string accountType);
+    public interface ITransactionRepository
+    {
+        Task AddTransaction(Transaction transaction);
+        Task <IEnumerable<Transaction>> GetTransactionHistory(string accountType);
+    }
 }

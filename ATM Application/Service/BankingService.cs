@@ -1,5 +1,10 @@
-public class BankingService :IBankingService
+using ATM_Application.Models;
+using ATM_Application.Repositories;
+
+namespace ATM_Application.Services
 {
+  public class BankingService :IBankingService
+  {
     private IAccountRepository _accountRepository;
     private ITransactionRepository _transactionRepository;
 
@@ -88,15 +93,16 @@ public class BankingService :IBankingService
     }
     private string MapAccountTypeToString(AccountType accountType)
     {
-    switch (accountType)
-    {
+      switch (accountType)
+        {
         case AccountType.Checking:
             return "Checking";
         case AccountType.Savings:
             return "Savings";
         default:
             return "Unknown Account Type";
-    }
+         }
     }
 
+  }
 }

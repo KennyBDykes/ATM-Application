@@ -1,6 +1,8 @@
 
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using ATM_Application.Services;
+using ATM_Application.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

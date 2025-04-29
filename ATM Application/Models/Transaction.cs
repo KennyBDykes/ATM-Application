@@ -1,6 +1,8 @@
 
-public class Transaction
+namespace ATM_Application.Models
 {
+    public class Transaction
+    {
     public Guid Id{ get; set; } = Guid.NewGuid();
     public DateTime Date{ get; set; }
     public string Type { get; set; }
@@ -8,4 +10,5 @@ public class Transaction
     public string? AccountTo { get; set; }
     public string? AccountFrom { get; set; }
     public decimal Amount { get; set; }
+    }
 }

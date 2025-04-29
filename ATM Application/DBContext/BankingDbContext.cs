@@ -1,3 +1,4 @@
+using ATM_Application.Models;
 using Microsoft.EntityFrameworkCore;
 
 public class BankingDbContext : DbContext

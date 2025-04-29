@@ -1,9 +1,11 @@
+using ATM_Application.Services;
 using Microsoft.AspNetCore.Mvc;
-
-[Route("api/v1/[controller]")]
-[ApiController]
-public class BankingController : ControllerBase
+namespace ATM_Application.Controller
 {
+  [Route("api/v1/[controller]")]
+  [ApiController]
+  public class BankingController : ControllerBase
+  {
     private  IBankingService _bankingService;
     public BankingController(IBankingService bankingService)
     {
@@ -90,4 +92,5 @@ public class BankingController : ControllerBase
           return NotFound(e.Message);
          }
     }
+  }
 }
