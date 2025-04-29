@@ -1,0 +1,6 @@
+/Users/kennyd/ATM-Application/ATM_Application.Tests/obj/Debug/net8.0/ATM_Application.Tests.csproj.AssemblyReference.cache
+/Users/kennyd/ATM-Application/ATM_Application.Tests/obj/Debug/net8.0/ATM_Application.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kennyd/ATM-Application/ATM_Application.Tests/obj/Debug/net8.0/ATM_Application.Tests.AssemblyInfoInputs.cache
+/Users/kennyd/ATM-Application/ATM_Application.Tests/obj/Debug/net8.0/ATM_Application.Tests.AssemblyInfo.cs
+/Users/kennyd/ATM-Application/ATM_Application.Tests/obj/Debug/net8.0/ATM_Application.Tests.csproj.CoreCompileInputs.cache
+/Users/kennyd/ATM-Application/ATM_Application.Tests/obj/Debug/net8.0/ATM_Application.Tests.sourcelink.json
